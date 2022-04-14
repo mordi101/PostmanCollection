@@ -1,0 +1,1250 @@
+{
+	"info": {
+		"_postman_id": "987ca6dd-7681-4975-889b-6fb1a1753dab",
+		"name": "API_SandBox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetBal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"/*\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Customer id is not null\", function () {\r",
+							"    pm.expect(jsonData.customerId).to.not.eql(null); \r",
+							"});\r",
+							"*/\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/v2/customers/{{MSISDN}}/plans",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v2",
+						"customers",
+						"{{MSISDN}}",
+						"plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNetWorkOps",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/v2/customers/{{MSISDN}}/plans",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v2",
+						"customers",
+						"{{MSISDN}}",
+						"plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KYC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "GD-354367484",
+						"type": "text"
+					},
+					{
+						"key": "X-API-KEY",
+						"value": "lWviLMB4GIU7PV2SEAWfnRhdUAIyhz5c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/v1/customers/{{MSISDN}}/kyc",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"customers",
+						"{{MSISDN}}",
+						"kyc"
+					]
+				},
+				"description": "Retrieve Customer KYC Details, without getting user consent, No Category specified, that is, return all KYC data"
+			},
+			"response": []
+		},
+		{
+			"name": "GetLinkedNumbers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/v1/customers/{{MSISDN}}/kyc/linkedAccounts",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"customers",
+						"{{MSISDN}}",
+						"kyc",
+						"linkedAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Open Invoice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "NGA",
+						"type": "text"
+					},
+					{
+						"key": "targetSystem",
+						"value": "clm",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/customerBillManagement/v1/customerBill/{{ServID}}?customerType=2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"customerBillManagement",
+						"v1",
+						"customerBill",
+						"{{ServID}}"
+					],
+					"query": [
+						{
+							"key": "customerType",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PartyManager",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "XhcdDv880vNO7rfOVALzFronQB9PbORm",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "NGA",
+						"type": "text"
+					},
+					{
+						"key": "targetSystem",
+						"value": "CLM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/party/v1/individual/{{ServID}}?countryCode=NGA&idType=2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"party",
+						"v1",
+						"individual",
+						"{{ServID}}"
+					],
+					"query": [
+						{
+							"key": "countryCode",
+							"value": "NGA"
+						},
+						{
+							"key": "idType",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction History",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "NGA",
+						"type": "text"
+					},
+					{
+						"key": "targetSystem",
+						"value": "CLM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/customerBillManagement/v1/customerBill?customerId={{ServID}}&customerType=2&limit=3&startDate=1/09/2021",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"customerBillManagement",
+						"v1",
+						"customerBill"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{{ServID}}"
+						},
+						{
+							"key": "customerType",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "startDate",
+							"value": "1/09/2021"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "eg",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "countryCode",
+								"value": "NGA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/customerBill?customerId=2000134530&customerType=2&limit=10&startDate=27/08/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customerBill"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "2000134530"
+								},
+								{
+									"key": "customerType",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "startDate",
+									"value": "27/08/2020"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Oct 2020 12:44:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"resultCode\": \"0000\",\n        \"resultDescription\": \"Request has been Processed Successfully.\",\n        \"transactionId\": null\n    },\n    \"data\": [\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00007483/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00007483/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-9938.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"30000.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00007483/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"05/06/2020 02:36:52\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"05/06/2020 02:36:52\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003036/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003036/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-39908.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"10.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003036/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"18/08/2020 10:09:32\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"18/08/2020 10:09:32\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003037/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003037/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-39918.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"10.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003037/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"18/08/2020 11:34:57\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"18/08/2020 11:34:57\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003038/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003038/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-39928.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"100.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003038/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"18/08/2020 03:06:45\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"18/08/2020 03:06:45\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003040/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003040/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-40028.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"30.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003040/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"18/08/2020 04:03:55\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"18/08/2020 04:03:55\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003042/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003042/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-40058.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"14.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003042/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"19/08/2020 07:18:46\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"19/08/2020 07:18:46\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003054/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003054/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-40072.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"14.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003054/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"20/08/2020 12:51:14\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"20/08/2020 12:51:14\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003055/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003055/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-40086.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"14.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003055/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"20/08/2020 03:04:11\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"20/08/2020 03:04:11\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003056/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003056/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-40100.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"4.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003056/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"20/08/2020 03:05:55\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"20/08/2020 03:05:55\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        },\n        {\n            \"id\": null,\n            \"href\": null,\n            \"billType\": null,\n            \"billNo\": \"1RCT/00003057/20\",\n            \"billDate\": null,\n            \"category\": null,\n            \"billRunType\": null,\n            \"lastUpdate\": null,\n            \"nextBillDate\": null,\n            \"paymentDueDate\": null,\n            \"state\": null,\n            \"amountDue\": null,\n            \"amountDueDetail\": [\n                {\n                    \"id\": \"1RCT/00003057/20\",\n                    \"dueDate\": null,\n                    \"validFor\": null,\n                    \"unpaidAmount\": {\n                        \"amount\": \"-40104.48\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"advanceAmount\": {\n                        \"amount\": \"14.00\",\n                        \"unit\": \"NGN\"\n                    },\n                    \"taxExcludedAmount\": null,\n                    \"taxIncludedAmount\": null,\n                    \"totalDueAmount\": {\n                        \"amount\": \"0\",\n                        \"unit\": \"NGN\"\n                    }\n                }\n            ],\n            \"relatedParty\": null,\n            \"billCycle\": null,\n            \"appliedPayment\": {\n                \"idType\": null,\n                \"id\": null,\n                \"totalPaidAmount\": null,\n                \"payment\": [\n                    {\n                        \"id\": null,\n                        \"paymentRef\": [\n                            {\n                                \"referenceId\": \"1RCT/00003057/20\",\n                                \"referenceType\": \"receiptNumber\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"0\",\n                                \"referenceType\": \"invoiceAmount\",\n                                \"referenceName\": null\n                            },\n                            {\n                                \"referenceId\": \"20/08/2020 03:35:24\",\n                                \"referenceType\": \"invoiceDate\",\n                                \"referenceName\": null\n                            }\n                        ],\n                        \"billNumber\": null,\n                        \"transactionDate\": \"20/08/2020 03:35:24\",\n                        \"paidAmount\": null,\n                        \"paymentMethod\": null\n                    }\n                ]\n            },\n            \"billDocument\": null,\n            \"billingAccount\": null,\n            \"financialAccount\": null,\n            \"taxItem\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Excess Bill Payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "NGA",
+						"type": "text"
+					},
+					{
+						"key": "targetSystem",
+						"value": "CLM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/customerBillManagement/v1/customerBill/{{ServID}}?customerType=2&queryType=completeBill",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"customerBillManagement",
+						"v1",
+						"customerBill",
+						"{{ServID}}"
+					],
+					"query": [
+						{
+							"key": "customerType",
+							"value": "2"
+						},
+						{
+							"key": "queryType",
+							"value": "completeBill"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HVJ_Recharge",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "countryCode",
+						"value": "234",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/usageManagement/v1/recharge/{{MSISDN}}?endTime=20210201&limit=1000&pageSize=1&startTime=20200101",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usageManagement",
+						"v1",
+						"recharge",
+						"{{MSISDN}}"
+					],
+					"query": [
+						{
+							"key": "endTime",
+							"value": "20210201"
+						},
+						{
+							"key": "limit",
+							"value": "1000"
+						},
+						{
+							"key": "pageSize",
+							"value": "1"
+						},
+						{
+							"key": "startTime",
+							"value": "20200101"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initiate vehicle request Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-country-code",
+						"value": "NGA",
+						"type": "text"
+					},
+					{
+						"key": "transactionId",
+						"value": "1234567",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"requestId\":\"1\",\r\n    \"externalId\":\"korede.fakolujo\",\r\n    \"note\":{\r\n        \"id\":\"LA\",\r\n        \"text\":\"OJ\",\r\n        \"date\":\"2021-10-27\"\r\n    },\r\n    \"validFor\":{\r\n        \"startDateTime\":\"27-10-2021T06:30:00.000Z\",\r\n        \"endDateTime\":\"27-10-2021T09:30:00.000Z\"\r\n    },\r\n    \"attachment\":[\r\n        {\r\n            \"size\":{\r\n                \"amount\":3,\r\n                \"unit\":\"Hr\"\r\n            },\r\n            \"description\":\"Test: Pickup\",\r\n            \"content\":\"adebiyi.odusole@mtn.com\"\r\n        }\r\n    ],\r\n    \"contactMedium\":{\r\n        \"characteristic\":{\r\n            \"city\":\"Test Destination\",\r\n            \"emailAddress\":\"adebiyi.odusole@mtn.com\",\r\n            \"phoneNumber\": \"08033794045\",\r\n            \"stateOrProvince\": \"LA\"\r\n        }\r\n    },\r\n    \"relatedParty\":{\r\n        \"id\":\"adebiyi.odusole\"\r\n    },\r\n    \"relatedEntity\":{\r\n        \"name\": \"Korede Fakolujo\"\r\n    },\r\n    \"relatedPlace\":{\r\n        \"id\":\"2\",\r\n        \"name\":\"1\",\r\n        \"role\":\"1\"\r\n    },\r\n    \"type\": \"1\",\r\n    \"description\": \"Test purpose on 25 Nov 2021\",\r\n    \"status\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://preprod-nigeria.api.mtn.com/v1/appointment/appointment/60?targetSystem=Aquila",
+					"protocol": "https",
+					"host": [
+						"preprod-nigeria",
+						"api",
+						"mtn",
+						"com"
+					],
+					"path": [
+						"v1",
+						"appointment",
+						"appointment",
+						"60"
+					],
+					"query": [
+						{
+							"key": "targetSystem",
+							"value": "Aquila"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Car Status Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-country-code",
+						"value": "NGA",
+						"type": "text"
+					},
+					{
+						"key": "transactionId",
+						"value": "1234567",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the X-API-Key header generated by Postman.",
+						"key": "x-api-key",
+						"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://preprod-nigeria.api.mtn.com/v1/appointment/appointment/1?targetSystem=Aquila",
+					"protocol": "https",
+					"host": [
+						"preprod-nigeria",
+						"api",
+						"mtn",
+						"com"
+					],
+					"path": [
+						"v1",
+						"appointment",
+						"appointment",
+						"1"
+					],
+					"query": [
+						{
+							"key": "targetSystem",
+							"value": "Aquila"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refill_S6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "sourceSystemId",
+						"type": "text",
+						"value": "CHATBOT"
+					},
+					{
+						"key": "channel",
+						"value": "Flutterwave",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refillType\": \"voucherless\",\n\t  \"refillProfileId\": \"S6\",\n\t\"transactionAmount\": 5\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/v2/customers/{{s6}}/plans/refill",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v2",
+						"customers",
+						"{{s6}}",
+						"plans",
+						"refill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Voucher Patch Refill Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "nl1KX8hcIj8imk6AOYt5VgUHzzyd1Yxz",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "sourceSystemId",
+						"value": "CHATBOT",
+						"type": "text"
+					},
+					{
+						"key": "channel",
+						"value": "Flutterwave",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"refillType\": \"VOUCHER\",\n  \"voucherActivationCode\": \"1231523619528807\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v2/customers/{{MSISDN}}/plans/refill",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v2",
+						"customers",
+						"{{MSISDN}}",
+						"plans",
+						"refill"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Voucher Patch Refill - Success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refillType\": \"VOUCHER\",\n  \"transactionAmount\": 0,\n  \"voucherActivationCode\": \"21133554029865865\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://staging-nigeria.api.mtn.com/v2/customers/2349062058855/plans/refill",
+							"protocol": "https",
+							"host": [
+								"staging-nigeria",
+								"api",
+								"mtn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"customers",
+								"2349062058855",
+								"plans",
+								"refill"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "date",
+							"value": "Tue, 22 Sep 2020 16:39:31 GMT"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "x-response-time",
+							"value": "466"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": \"0000\",\n    \"statusMessage\": \"Success\",\n    \"data\": {\n        \"amount\": 40000,\n        \"currencyCode\": \"NGN\"\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://customer-plans-aggregator-v2:8080/customers/2349062058855/plans/refill\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Voucher Patch Refill - Voucher status used by same",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refillType\": \"VOUCHER\",\n  \"transactionAmount\": 0,\n  \"voucherActivationCode\": \"21133554029865865\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://staging-nigeria.api.mtn.com/v2/customers/2349062058855/plans/refill",
+							"protocol": "https",
+							"host": [
+								"staging-nigeria",
+								"api",
+								"mtn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"customers",
+								"2349062058855",
+								"plans",
+								"refill"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/hal+json;charset=UTF-8"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "date",
+							"value": "Tue, 22 Sep 2020 16:41:49 GMT"
+						},
+						{
+							"key": "x-response-time",
+							"value": "319"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"20200922T16:41:49+0000\",\n    \"statusCode\": \"1072\",\n    \"error\": \"Bad Request\",\n    \"message\": \"Voucher status used by same\",\n    \"path\": \"http://refill-air-system.madapi-preprod.svc.cluster.local:8080/customers/2349062058855/refill?refillType=voucher\"\n}"
+				}
+			]
+		},
+		{
+			"name": "MTN4ME_Get Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "4567897654678986",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "5wtsaaIo9gX5NVXIP2nAc7E4imQHlUqP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/v3/products/2349062059744/category?nodeId=SMARTAPP&productType=CVMoffer",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v3",
+						"products",
+						"2349062059744",
+						"category"
+					],
+					"query": [
+						{
+							"key": "nodeId",
+							"value": "SMARTAPP"
+						},
+						{
+							"key": "productType",
+							"value": "CVMoffer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MTN4ME_Get offers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "TKWCbBJW8dbgMWxz1auOL8uPetUQz30V",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "5wtsaaIo9gX5NVXIP2nAc7E4imQHlUqP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/v3/products/2349062059744/eligible?nodeId=SMARTAPP&transactionId=434567890763776794&productType=CVMoffer&offerCategory=Data4ME",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v3",
+						"products",
+						"2349062059744",
+						"eligible"
+					],
+					"query": [
+						{
+							"key": "nodeId",
+							"value": "SMARTAPP"
+						},
+						{
+							"key": "transactionId",
+							"value": "434567890763776794"
+						},
+						{
+							"key": "productType",
+							"value": "CVMoffer"
+						},
+						{
+							"key": "offerCategory",
+							"value": "Data4ME"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
